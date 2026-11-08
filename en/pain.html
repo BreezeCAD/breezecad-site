@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineer’s pain — BreezeCAD</title>
+<meta name="description" content="What annoyed an engineer in CAD for years — and how BreezeCAD solves it: controls, threads, windows, autosave, assemblies.">
+<meta name="theme-color" content="#f5f6f8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Engineer’s pain — BreezeCAD">
+<meta property="og:description" content="What annoyed an engineer in CAD for years — and how BreezeCAD solves it.">
+<meta property="og:image" content="https://breezecad.ru/assets/img/og.jpg">
+<link rel="canonical" href="https://breezecad.ru/en/pain.html">
+<link rel="alternate" hreflang="ru" href="https://breezecad.ru/pain.html">
+<link rel="alternate" hreflang="en" href="https://breezecad.ru/en/pain.html">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chips a{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:15px}
+.chips a span{font:13px 'IBM Plex Mono',monospace;color:var(--red)}
+.chips a:hover{border-color:var(--red-line);color:var(--ink)}
+.ep{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center;padding-top:140px}
+.ep.flip .ep-text{order:2}
+.pain{background:var(--red-bg);border:1px solid var(--red-line);border-radius:22px;padding:24px 26px}
+.pain-tag{font-size:13px;color:var(--red)}
+.pain h3{margin:8px 0 8px;font-size:20px;color:#5a2b2b}
+.pain p{margin:0;font-size:16px;line-height:1.6;color:#6b4545}
+.fix{margin-top:28px}
+.fix-tag{font-size:13px;color:var(--blue)}
+.fix .h2{font-size:44px;color:var(--ink)}
+.checks{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
+.checks li{position:relative;padding-left:34px;font-size:17px;line-height:1.55;color:#33373f}
+.checks li::before{content:"";position:absolute;left:0;top:3px;width:22px;height:22px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat}
+.punch{margin:26px 0 0;font-size:15px;color:var(--gold)}
+.ep-shot{margin:0}
+.frame{background:#fff;border:1px solid var(--line);border-radius:22px;padding:7px;box-shadow:0 34px 70px rgba(28,31,36,.12)}
+.pic{position:relative;border-radius:15px;overflow:hidden}
+.pic img{display:block;width:100%;height:auto}
+.dot{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:var(--blue);color:#fff;font:600 14px 'IBM Plex Sans',sans-serif;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(255,255,255,.9),0 6px 16px rgba(30,79,216,.35)}
+.dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--blue);animation:ping 2.4s ease-out infinite;opacity:0}
+@keyframes ping{0%{transform:scale(.9);opacity:.7}70%{transform:scale(1.9);opacity:0}100%{opacity:0}}
+.legend{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px}
+.legend li{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink2)}
+.num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;font:600 12px 'IBM Plex Sans',sans-serif;display:inline-flex;align-items:center;justify-content:center}
+.final{margin-top:140px;text-align:center;padding:72px 32px}
+@media (max-width:980px){
+.ep{grid-template-columns:minmax(0,1fr);gap:32px;padding-top:96px}
+.ep.flip .ep-text{order:0}
+.fix .h2{font-size:36px}
+}
+@media (max-width:600px){
+.fix .h2{font-size:30px}
+.dot{width:24px;height:24px;margin:-12px 0 0 -12px;font-size:12px}
+.final{padding:48px 20px}
+}
+@media (prefers-reduced-motion: reduce){.dot::after{display:none}}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="wrap">
+<a class="brand" href="./" aria-label="BreezeCAD — home"><img src="../assets/mark.svg" width="24" height="28" alt=""><b>Breeze<span>CAD</span></b><span class="tag">— freedom to create</span></a>
+<nav class="nav" aria-label="Sections">
+<a href="pain.html" class="pill" aria-current="page">Engineer’s pain</a>
+<a href="modules.html">Modules &amp; libraries</a>
+<a href="people.html">People</a>
+<span class="soon">Web version <span>soon</span></span>
+<a href="https://vk.ru/breezecad" target="_blank" rel="noopener">News ↗</a>
+</nav>
+<div style="display:flex;gap:10px;flex-shrink:0;align-items:center">
+<nav class="lang" aria-label="Language"><a href="../pain.html" lang="ru" hreflang="ru">RU</a><a href="pain.html" lang="en" aria-current="true">EN</a></nav>
+<a class="btn btn-ghost hbtn" href="https://boosty.to/breezecad" target="_blank" rel="noopener">Support</a>
+<a class="btn btn-blue hbtn" href="./#download">Download</a>
+</div>
+</div></header>
+<main>
+<section class="wrap hero">
+<span class="redtag in">Engineer’s pain</span>
+<h1 class="h1 in d1">Made of pain.</h1>
+<p class="lead in d2">I’ve worked in CAD for years, and for years something in it drove me mad. Here are the most painful bits and how BreezeCAD solves them.</p>
+<p class="in d2" style="margin:14px 0 0;font-size:15px;color:var(--muted)">— Mikhail Verkholashin, author of BreezeCAD</p>
+<nav class="chips in d3" aria-label="Episodes">
+<a href="#controls"><span>01</span>Controls adapt to you</a>
+<a href="#thread"><span>02</span>Threads that actually print</a>
+<a href="#windows"><span>03</span>No windows over the model</a>
+<a href="#autosave"><span>04</span>Your work won’t vanish</a>
+<a href="#assembly"><span>05</span>Parts hold on to each other</a>
+</nav>
+</section>
+<section id="controls" class="ep wrap">
+<div class="ep-text">
+<div class="pain rv">
+<span class="pain-tag mono">pain 01</span>
+<h3>Whose mouse is this?</h3>
+<p>During the day I have three or four programs open, and each has its own opinion about the mouse. In one, holding the wheel pans the part; in another the same move rotates it. The wheel zooms in here and out there. By lunch my hand confidently spins the part the wrong way.</p>
+</div>
+<div class="fix rv">
+<span class="fix-tag mono">fix</span>
+<h2 class="h2">Controls adapt to you.</h2>
+<ul class="checks">
+<li>Ready-made mouse presets matching the habits of popular programs: pick one and your hands work the way they’re used to.</li>
+<li>Or your own: rotate, pan and zoom on any button with Shift, Ctrl or Alt, wheel direction, rotation speed and style.</li>
+<li>Keyboard shortcuts — presets or anything you like. Your set saves to a file and moves with you to another computer.</li>
+<li>A separate tab for the touchpad: two fingers with modifiers, pinch, rotate.</li>
+</ul>
+<p class="punch mono">Hands remember — the program adapts.</p>
+</div>
+</div>
+<figure class="ep-shot zm">
+<div class="frame"><div class="pic"><img src="../assets/img/pain-controls.webp" width="1051" height="811" alt="Mouse settings: list of presets and button choice" loading="lazy">
+<span class="dot" style="left:22%;top:40.5%" aria-hidden="true">1</span>
+<span class="dot" style="left:62%;top:58%" aria-hidden="true">2</span>
+<span class="dot" style="left:50%;top:83%" aria-hidden="true">3</span>
+</div></div>
+<figcaption><ol class="legend">
+<li><span class="num">1</span>Control presets</li>
+<li><span class="num">2</span>Any button + Shift, Ctrl or Alt</li>
+<li><span class="num">3</span>Wheel direction</li>
+</ol></figcaption>
+</figure>
+</section>
+<section id="thread" class="ep wrap flip">
+<div class="ep-text">
+<div class="pain rv">
+<span class="pain-tag mono">pain 02</span>
+<h3>Threads that exist only in the picture</h3>
+<p>You add a thread, send it to the slicer — and get a smooth cylinder. The thread was cosmetic, just a picture on the face. Want to print it? Model the turns by hand and try to remember the pitch of M8.</p>
+</div>
+<div class="fix rv">
+<span class="fix-tag mono">fix</span>
+<h2 class="h2">Threads that actually print.</h2>
+<ul class="checks">
+<li>Click a shaft or a hole and the size is detected. A 6.8 mm hole is recognised as a tap hole for M8.</li>
+<li>Coarse ISO pitch by default; type a fine one by hand if you need it.</li>
+<li>The turns are real ISO 60° geometry and go straight into STL and 3MF.</li>
+<li>Heavy model? Show threads as cosmetic — the export still gets the real ones.</li>
+</ul>
+<p class="punch mono">One click — the rest is up to your printer.</p>
+</div>
+</div>
+<figure class="ep-shot zm">
+<div class="frame"><div class="pic"><img src="../assets/img/thread.webp" width="1600" height="1000" alt="Thread tool: size M30×3.5 detected automatically, real turns on the shaft" loading="lazy">
+<span class="dot" style="left:23%;top:31.5%" aria-hidden="true">1</span>
+<span class="dot" style="left:23%;top:44%" aria-hidden="true">2</span>
+<span class="dot" style="left:66%;top:52%" aria-hidden="true">3</span>
+</div></div>
+<figcaption><ol class="legend">
+<li><span class="num">1</span>Size detected: M30×3.5</li>
+<li><span class="num">2</span>Coarse ISO pitch</li>
+<li><span class="num">3</span>Real turns — straight to STL and 3MF</li>
+</ol></figcaption>
+</figure>
+</section>
+<section id="windows" class="ep wrap">
+<div class="ep-text">
+<div class="pain rv">
+<span class="pain-tag mono">pain 03</span>
+<h3>The window hides what you wanted to click</h3>
+<p>You start measuring and the result window lands exactly on the edge you need to click. You build a plane through three points, miss the third — and the whole selection resets. Start over.</p>
+</div>
+<div class="fix rv">
+<span class="fix-tag mono">fix</span>
+<h2 class="h2">No windows over the model.</h2>
+<ul class="checks">
+<li>Measurement results live in the left panel: distance, ΔX/ΔY/ΔZ, areas, radii and a Copy button. The model shows only a line and a label.</li>
+<li>Every selected item has its own field with a cross: you can clear one point, not everything at once.</li>
+<li>A missed click resets nothing.</li>
+</ul>
+<p class="punch mono">Count how many times a day you move windows around.</p>
+</div>
+</div>
+<figure class="ep-shot zm">
+<div class="frame"><div class="pic"><img src="../assets/img/pain-windows.webp" width="1280" height="800" alt="Plane through three points: two points selected, the third is pending, nothing covers the model" loading="lazy">
+<span class="dot" style="left:22%;top:48%" aria-hidden="true">1</span>
+<span class="dot" style="left:60%;top:42%" aria-hidden="true">2</span>
+<span class="dot" style="left:64.4%;top:80.6%" aria-hidden="true">3</span>
+</div></div>
+<figcaption><ol class="legend">
+<li><span class="num">1</span>Each point has its own field</li>
+<li><span class="num">2</span>Nothing covers the model</li>
+<li><span class="num">3</span>Selected points — right on the model</li>
+</ol></figcaption>
+</figure>
+</section>
+<section id="autosave" class="ep wrap flip">
+<div class="ep-text">
+<div class="pain rv">
+<span class="pain-tag mono">pain 04</span>
+<h3>Ctrl+S after every operation</h3>
+<p>Every designer has the reflex: one operation — Ctrl+S. Nobody invented it; it was trained into us. Usually at the cost of hours of work that vanished along with the program window.</p>
+</div>
+<div class="fix rv">
+<span class="fix-tag mono">fix</span>
+<h2 class="h2">Your work won’t vanish.</h2>
+<ul class="checks">
+<li>Autosave every 2, 5 or 10 minutes — even in the middle of a sketch.</li>
+<li>The copy is written while you pause, so nothing stutters.</li>
+<li>The last three copies of every document are kept.</li>
+<li>After a crash the home page shows “Unsaved work”: one button and you’re back where you stopped.</li>
+<li>And if the program does crash, you get a window with an error code you can copy and send.</li>
+</ul>
+<p class="punch mono">Ctrl+S is now a habit, not insurance.</p>
+</div>
+</div>
+<figure class="ep-shot zm">
+<div class="frame"><div class="pic"><img src="../assets/img/pain-autosave.webp" width="1210" height="934" alt="Settings: autosave every 5 minutes" loading="lazy">
+<span class="dot" style="left:61.5%;top:82.5%" aria-hidden="true">1</span>
+</div></div>
+<figcaption><ol class="legend">
+<li><span class="num">1</span>Every 2, 5 or 10 minutes</li>
+</ol></figcaption>
+</figure>
+</section>
+<section id="assembly" class="ep wrap">
+<div class="ep-text">
+<div class="pain rv">
+<span class="pain-tag mono">pain 05</span>
+<h3>One fillet, half the assembly in pieces</h3>
+<p>I’m making an enclosure for a board: I build the box right off the base, project the outline, 0.2 mm gap — lovely. Then I notice sharp edges and add a 1 mm fillet. I open the box and the sketch is red: the projections lost their edges, and the extrusion and the mates went down with them. A one-millimetre fillet, then an hour of archaeology: what was built from what, and how to glue it back. Good thing Ctrl+S was a reflex by then.</p>
+</div>
+<div class="fix rv">
+<span class="fix-tag mono">fix · 0.2.5.1</span>
+<h2 class="h2">Parts hold on to each other.</h2>
+<ul class="checks">
+<li>A projection now relies not on the body edge but on the sketch line that edge grew from. A fillet, chamfer or shell leaves a line a line: it may get shorter, but the reference holds.</li>
+<li>A projection is lost only if its source line is deleted. Older files pick this up on their own when opened.</li>
+<li>Changed the sketch itself — added a contour, moved a dimension? When you finish editing, BreezeCAD shows “A change affecting other parts was detected”, one part at a time.</li>
+<li>Four answers: keep it as is, adapt automatically, follow the new contour at a gap (mimicking) or open the sketches for manual editing — with constraints rolled back to how they were before the break.</li>
+<li>On the right, a preview: the changed volume glows with a red haze visible from any angle. Each decision is a single undo step.</li>
+</ul>
+<p class="punch mono">Fillet away — the box won’t take offence.</p>
+</div>
+</div>
+<figure class="ep-shot zm">
+<div class="frame"><div class="pic"><img src="../assets/img/pain-assembly.webp" width="1060" height="660" alt="The “A change affecting other parts was detected” window (Russian UI): mimicking with a 0.2 mm gap is selected, the box preview on the right shows the changed volume in red haze" loading="lazy">
+<span class="dot" style="left:4.3%;top:48.8%" aria-hidden="true">1</span>
+<span class="dot" style="left:5.4%;top:59.5%" aria-hidden="true">2</span>
+<span class="dot" style="left:86.8%;top:62%" aria-hidden="true">3</span>
+</div></div>
+<figcaption><ol class="legend">
+<li><span class="num">1</span>Four options for every part</li>
+<li><span class="num">2</span>Gap for mimicking</li>
+<li><span class="num">3</span>What changes — in red haze</li>
+</ol></figcaption>
+</figure>
+</section>
+<section class="wrap">
+<div class="card final rv">
+<span class="redtag">Engineer’s pain</span>
+<h2 class="h2" style="margin-top:22px">What annoys you?</h2>
+<p class="lead" style="margin-left:auto;margin-right:auto">The series continues in our VK group. Tell us in the comments what gets in your way in CAD — the next episode might be about your pain.</p>
+<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+<a class="btn btn-ghost" href="https://vk.ru/breezecad" target="_blank" rel="noopener">The series on VK ↗</a>
+<a class="btn btn-blue" href="./#download">Download BreezeCAD</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="ftr"><div class="wrap">
+<div style="display:flex;align-items:center;gap:10px"><img src="../assets/mark.svg" width="18" height="21" alt=""><span>© 2026 BreezeCAD · freedom to create</span></div>
+<nav aria-label="Pages"><a href="./">Home</a><a href="pain.html">Engineer’s pain</a><a href="modules.html">Modules &amp; libraries</a><a href="people.html">People</a><a href="privacy.html">Privacy</a><a href="../pain.html" lang="ru" hreflang="ru">Русский</a></nav>
+</div></footer>
+</body>
+</html>

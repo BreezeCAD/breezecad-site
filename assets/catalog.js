@@ -8,12 +8,12 @@
   var DATA = root.getAttribute('data-src') || 'data/registry-index.json';
 
   var T = EN ? {
-    module: 'Modules', library: 'Libraries', module1: 'Module', library1: 'Library', search: 'Search by name, description or tag',
+    module: 'Modules', library: 'Libraries', module1: 'Module', library1: 'Library', search: 'Name, author or tag',
     authors: 'Authors', all: 'All authors', get: 'Download', from: 'BreezeCAD',
     source: 'Source ↗', bundled: 'built in', empty: 'Nothing found. Try another word or author.',
     open: 'Open', any: 'any system', mb: 'MB', kb: 'KB', reset: 'Reset filters', ver: 'v'
   } : {
-    module: 'Модули', library: 'Библиотеки', module1: 'Модуль', library1: 'Библиотека', search: 'Поиск по названию, описанию, тегам',
+    module: 'Модули', library: 'Библиотеки', module1: 'Модуль', library1: 'Библиотека', search: 'Название, автор, тег',
     authors: 'Авторы', all: 'Все авторы', get: 'Скачать', from: 'BreezeCAD',
     source: 'Исходники ↗', bundled: 'встроено в программу', empty: 'Ничего не нашлось. Попробуйте другое слово или автора.',
     open: 'Открыть', any: 'любая система', mb: 'МБ', kb: 'КБ', reset: 'Сбросить фильтры', ver: 'v'
