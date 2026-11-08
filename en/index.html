@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BreezeCAD — freedom to create</title>
+<meta name="description" content="BreezeCAD is a free, lightweight CAD for 3D printing and CNC. Windows, macOS, Linux and Android. No internet, no subscriptions, no data collection.">
+<meta name="theme-color" content="#f5f6f8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BreezeCAD — freedom to create">
+<meta property="og:description" content="A free, lightweight CAD for 3D printing and CNC. Computer and phone, no internet, no subscriptions.">
+<meta property="og:image" content="https://breezecad.ru/assets/img/og.jpg">
+<meta property="og:url" content="https://breezecad.ru/en/">
+<link rel="canonical" href="https://breezecad.ru/en/">
+<link rel="alternate" hreflang="ru" href="https://breezecad.ru/">
+<link rel="alternate" hreflang="en" href="https://breezecad.ru/en/">
+<link rel="alternate" hreflang="x-default" href="https://breezecad.ru/">
+<link rel="stylesheet" href="../assets/download.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "BreezeCAD",
+  "alternateName": ["БризКАД", "Бриз КАД", "Бриз", "Breeze CAD", "Брайз КАД"],
+  "description": "A free, lightweight CAD for 3D printing and CNC. No internet, no subscriptions, no data collection.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Windows, macOS, Linux, Android",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "url": "https://breezecad.ru/en/",
+  "sameAs": ["https://github.com/BreezeCAD", "https://github.com/BreezeCAD/breezecad"]
+}
+</script>
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-SemiBold.woff" as="font" type="font/woff" crossorigin>
+<style>
+@font-face{font-family:'IBM Plex Sans';src:url(../assets/fonts/IBMPlexSans-Regular.woff) format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url(../assets/fonts/IBMPlexSans-Medium.woff) format('woff');font-weight:500;font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url(../assets/fonts/IBMPlexSans-SemiBold.woff) format('woff');font-weight:600 700;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url(../assets/fonts/IBMPlexMono-Regular.woff) format('woff');font-weight:400 500;font-display:swap}
+body{margin:0;background:#f5f6f8;-webkit-text-size-adjust:100%}
+a{color:#1e4fd8}a:hover{color:#163ea8}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+.bz *{box-sizing:border-box}
+.bz{overflow-x:clip;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1c1f24;background-color:#f5f6f8;background-image:linear-gradient(#e7e9ed 1px,transparent 1px),linear-gradient(90deg,#e7e9ed 1px,transparent 1px);background-size:36px 36px}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.sec{padding-top:140px}
+.kick{margin:0;font:500 14px 'IBM Plex Mono',monospace;color:#8a6a2c}
+.h2{margin:14px 0 0;font-size:64px;line-height:1.04;letter-spacing:-0.03em;font-weight:700}
+.lead{margin:20px 0 0;font-size:20px;line-height:1.55;color:#4a5060;max-width:640px}
+.nav a{color:#1c1f24;text-decoration:none;font-size:15px;padding:10px 2px;white-space:nowrap}
+@media (max-width:1500px){.hide-mid{display:none!important}}
+@media (max-width:1320px){.nav-links{gap:16px!important}}
+@media (max-width:1180px){.nav-soon{display:none!important}}
+@media (max-width:1060px){.nav-links{display:none!important}}
+.nav a:hover{color:#1e4fd8}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:14px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .25s ease,background .25s ease,border-color .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-blue{background:#1e4fd8;color:#fff}
+.btn-blue:hover{background:#163ea8;color:#fff}
+.btn-ghost{background:#fff;color:#1c1f24;border:1px solid #d9dce3}
+.btn-ghost:hover{color:#1e4fd8;border-color:#1e4fd8}
+.pain-pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px!important;border-radius:999px;background:#fff;border:1px solid #e3e5ea}
+.pain-pill::before{content:"";width:8px;height:8px;border-radius:50%;background:#d64545}
+.pain-teaser{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:48px}
+.pain-teaser a{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #e3e5ea;border-radius:24px;padding:26px;text-decoration:none;color:#1c1f24;transition:transform .25s ease,border-color .25s ease}
+.pain-teaser a:hover{transform:translateY(-3px);border-color:#f4d3d3;color:#1c1f24}
+.pain-teaser .p{font-size:15px;line-height:1.5;color:#8a4a4a}
+.pain-teaser .s{font-size:20px;font-weight:600;line-height:1.25}
+.redtag{display:inline-flex;align-items:center;min-height:36px;padding:0 16px;border-radius:11px;background:#d64545;color:#fff;font:500 16px 'IBM Plex Mono',monospace}
+.foot-nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+.foot-nav a{color:#4a5060;text-decoration:none}.foot-nav a:hover{color:#1e4fd8}
+.card{background:#fff;border:1px solid #e3e5ea;border-radius:28px;padding:36px}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.lang button{border:0;background:transparent;font:500 13px 'IBM Plex Mono',monospace;color:#5b6170;min-width:40px;min-height:34px;border-radius:9px;cursor:pointer}
+.lang button.on{background:#1c1f24;color:#fff}
+.lang{display:flex;gap:2px;padding:3px;border-radius:12px;background:#eceef2}
+.lang a{display:inline-flex;align-items:center;justify-content:center;min-width:38px;min-height:34px;border-radius:9px;font:500 13px 'IBM Plex Mono',monospace;color:#5b6170;text-decoration:none}
+.lang a:hover{color:#1c1f24}
+.lang a[aria-current]{background:#1c1f24;color:#fff}
+.shot{display:block;width:100%;height:auto;border-radius:18px;border:1px solid #e3e5ea;background:#fff}
+.step-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.step-row.flip .step-text{order:2}
+.step-n{font:500 14px 'IBM Plex Mono',monospace;color:#1e4fd8}
+.step-text h3{margin:10px 0 12px;font-size:34px;letter-spacing:-0.02em;line-height:1.1}
+.step-text p{margin:0;font-size:18px;line-height:1.6;color:#4a5060;max-width:440px}
+.bar{height:14px;border-radius:7px;background:#1e4fd8;transform-origin:left}
+.tile{background:#fff;border:1px solid #e3e5ea;border-radius:24px;padding:28px}
+.tile h3{margin:18px 0 8px;font-size:20px}
+.tile p{margin:0;color:#4a5060;line-height:1.55}
+#bz-part{display:block;width:100%;height:520px;cursor:grab;touch-action:pan-y}
+#bz-part:active{cursor:grabbing}
+
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes zoom{from{opacity:.2;transform:scale(.86) translateY(40px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes partIn{from{opacity:0;transform:translateY(30px) scale(.94)}to{opacity:1;transform:none}}
+.in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.12s}.d2{animation-delay:.24s}.d3{animation-delay:.36s}
+.part-in{animation:partIn 1.2s .3s cubic-bezier(.2,.7,.2,1) both}
+@supports (animation-timeline: view()){
+.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
+.zm{animation:zoom linear both;animation-timeline:view();animation-range:entry 0% cover 40%}
+.gr{animation:grow linear both;animation-timeline:view();animation-range:entry 10% cover 45%}
+}
+@media (prefers-reduced-motion: reduce){.bz *{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (max-width:980px){
+.nav-links{display:none!important}
+.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pain-teaser{grid-template-columns:repeat(2,minmax(0,1fr))}
+.step-row{grid-template-columns:minmax(0,1fr);gap:24px}
+.step-row.flip .step-text{order:0}
+.h2{font-size:48px}
+.hero-h{font-size:64px!important}
+}
+@media (max-width:600px){
+.wrap{padding:0 16px}
+.g2,.g3,.g4,.pain-teaser{grid-template-columns:minmax(0,1fr)}
+.lang,.hide-sm{display:none!important}
+.h2{font-size:38px}
+.hero-h{font-size:46px!important}
+.lead{font-size:18px}
+.card{padding:24px}
+.sec{padding-top:96px}
+#bz-part{height:360px}
+.wrow{grid-template-columns:76px minmax(0,1fr) 92px!important;gap:12px!important}
+.wrow .mono{font-size:24px!important}
+.hbtn{padding:0 12px!important;font-size:14px!important;min-height:40px!important}
+.wordmark{display:none!important}
+
+.step-text h3{font-size:26px}
+}
+</style>
+</head>
+<body>
+<div class="bz">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(245,246,248,0.84); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid #e3e5ea">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1c1f24; flex-shrink: 0" aria-label="BreezeCAD — freedom to create, to top">
+<img src="../assets/mark.svg" width="24" height="28" alt="">
+<span class="wordmark" style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Breeze<span style="font-weight: 400; color: #6b7182">CAD</span></span>
+<span class="hide-sm hide-mid" style="font-size: 15px; color: #5b6170">— freedom to create</span>
+</a>
+<nav class="nav nav-links" style="display: flex; align-items: center; gap: 24px" aria-label="Sections">
+<a href="pain.html" class="pain-pill">Engineer’s pain</a>
+<a href="modules.html">Modules &amp; libraries</a>
+<a href="people.html">People</a>
+<span class="nav-soon" style="color: #8b909c; font-size: 15px; padding: 10px 2px; white-space: nowrap">Web version <span class="mono" style="font-size: 11px; padding: 2px 6px; border-radius: 6px; background: #eceef2; color: #5b6170">soon</span></span>
+<a href="https://vk.ru/breezecad" target="_blank" rel="noopener">News ↗</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0">
+<nav class="lang" aria-label="Language"><a href="./" lang="ru" aria-current="true">RU</a><a href="en/" lang="en" hreflang="en">EN</a></nav>
+<a href="https://boosty.to/breezecad" target="_blank" rel="noopener" class="btn btn-ghost hbtn" style="min-height: 44px; padding: 0 16px; font-size: 15px; border-radius: 12px">Support</a>
+<a class="btn btn-blue hbtn" href="#download" style="min-height: 44px; padding: 0 18px; font-size: 15px; border-radius: 12px">Download</a>
+</div>
+</div>
+</header>
+
+<section id="top" class="wrap" style="padding-top: 88px; text-align: center">
+<h1 class="hero-h in" style="margin: 0; font-size: 96px; line-height: 1; letter-spacing: -0.04em; font-weight: 700">Lightness in everything.</h1>
+<p class="lead in d1" style="margin: 24px auto 0">A free CAD for 3D printing and CNC. Computer and phone, no internet, no subscriptions.</p>
+<div class="in d2" style="display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; justify-content: center">
+<a class="btn btn-blue" href="#download">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"></path><path d="M6 11l6 6 6-6"></path><path d="M4 20h16"></path></svg>
+Download BreezeCAD</a>
+<a class="btn btn-ghost" href="#interface">See it in action</a>
+</div>
+<p class="mono in d3" style="margin: 16px 0 0; font-size: 13px; color: #5b6170"><span data-bz="version">0.2.5.1-Beta</span> · Windows · macOS · Linux · Android</p>
+<div class="part-in" style="position: relative; margin-top: 24px">
+<div aria-hidden="true" style="position: absolute; left: 50%; bottom: 34px; width: 340px; height: 46px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(28,31,36,0.16), rgba(28,31,36,0))"></div>
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(30,79,216,0.10), rgba(30,79,216,0))"></div>
+<canvas id="bz-part" role="img" aria-label="3D model of a fitting with an M20 outer and M16 inner thread — you can rotate it" style="position: relative"></canvas>
+</div>
+<p class="mono" style="margin: 0; font-size: 13px; color: #8a6a2c">↻ drag to rotate · fitting M20 / M16</p>
+</section>
+
+<section id="interface" class="wrap sec">
+<p class="kick rv">01 · interface</p>
+<h2 class="h2 rv">A light interface.</h2>
+<p class="lead rv">Nothing extra on screen, a minimum of clicks per operation and no windows over your model.</p>
+<div style="display: flex; flex-direction: column; gap: 96px; margin-top: 64px">
+<div class="step-row rv">
+<div class="step-text"><span class="step-n">01</span><h3>Sketch like on paper</h3><p>Draw a contour and the dimensions sit right above the lines. Tangency and constraints without extra windows.</p></div>
+<figure class="step-media zm" style="margin: 0"><div style="background: #fff; border: 1px solid #e3e5ea; border-radius: 22px; box-shadow: 0 30px 60px rgba(28,31,36,0.10); padding: 7px"><img src="../assets/img/sketch.webp" alt="Lever sketch with dimensions above the lines" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 15px"></div></figure>
+</div>
+<div class="step-row rv flip">
+<div class="step-text"><span class="step-n">02</span><h3>A part in a couple of clicks</h3><p>Extrude, revolve, holes, patterns. The feature tree is always on the left, at hand.</p></div>
+<figure class="step-media zm" style="margin: 0"><div style="background: #fff; border: 1px solid #e3e5ea; border-radius: 22px; box-shadow: 0 30px 60px rgba(28,31,36,0.10); padding: 7px"><img src="../assets/img/model-light.webp" alt="Flange with the feature tree on the left" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 15px"></div></figure>
+</div>
+<div class="step-row rv">
+<div class="step-text"><span class="step-n">03</span><h3>Threads that know their job</h3><p>Click a shaft or a hole and BreezeCAD picks the thread size itself.</p></div>
+<figure class="step-media zm" style="margin: 0"><div style="background: #fff; border: 1px solid #e3e5ea; border-radius: 22px; box-shadow: 0 30px 60px rgba(28,31,36,0.10); padding: 7px"><img src="../assets/img/thread.webp" alt="Thread panel: size M30×3.5 detected automatically" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 15px"></div></figure>
+</div>
+<div class="step-row rv flip">
+<div class="step-text"><span class="step-n">04</span><h3>Make it yours</h3><p>Light and dark themes, scaling for any screen, button captions you can hide.</p></div>
+<figure class="step-media zm" style="margin: 0"><div style="background: #fff; border: 1px solid #e3e5ea; border-radius: 22px; box-shadow: 0 30px 60px rgba(28,31,36,0.10); padding: 7px"><img src="../assets/img/model-dark.webp" alt="BreezeCAD in the dark theme" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 15px"></div></figure>
+</div>
+</div>
+</section>
+
+<section id="weight" class="wrap sec">
+<p class="kick rv">02 · size</p>
+<h2 class="h2 rv">Weightlessness, embodied.</h2>
+<p class="lead rv">The whole program is under a hundred megabytes. It downloads in a minute even over mobile internet.</p>
+<div class="card rv" style="margin-top: 48px; display: flex; flex-direction: column; gap: 26px">
+<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">macOS</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" data-bz="bar-macos" style="width: 19%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right"><span data-bz="size-macos">19</span><span style="font-size: 15px; color: #5b6170"> MB</span></span></div>
+<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Android</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" data-bz="bar-android" style="width: 26%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right"><span data-bz="size-android">26</span><span style="font-size: 15px; color: #5b6170"> MB</span></span></div>
+<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Linux</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" data-bz="bar-linux" style="width: 33%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right"><span data-bz="size-linux">33</span><span style="font-size: 15px; color: #5b6170"> MB</span></span></div>
+<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Windows</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" data-bz="bar-windows" style="width: 79%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right"><span data-bz="size-windows">79</span><span style="font-size: 15px; color: #5b6170"> MB</span></span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; border-top: 1px dashed #d9dce3; padding-top: 14px"><span class="mono" style="font-size: 12px; color: #5b6170">archive without installer · <span data-bz="version">0.2.5.1-Beta</span></span><span class="mono" style="font-size: 12px; color: #5b6170">scale — 100 MB</span></div>
+</div>
+</section>
+
+<section id="speed" class="wrap sec">
+<p class="kick rv">03 · performance</p>
+<h2 class="h2 rv">Quick off the mark.</h2>
+<p class="lead rv">Opens before you can blink and doesn’t ask for expensive hardware.</p>
+<div class="g2" style="margin-top: 48px">
+<div class="card rv" style="display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<div><div class="mono" style="font-size: 72px; line-height: 1; color: #1e4fd8">1–2 s</div><div style="margin-top: 10px; font-size: 18px; color: #4a5060">from a click to a program ready for work</div></div>
+<div><div class="mono" style="font-size: 72px; line-height: 1; color: #1e4fd8">70+</div><div style="margin-top: 10px; font-size: 18px; color: #4a5060">frames per second on a laptop with integrated graphics</div></div>
+</div>
+<div class="card rv" style="display: flex; flex-direction: column; gap: 14px">
+<p class="kick">tested on</p>
+<div style="display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 10px 16px; font-size: 16px; line-height: 1.45">
+<span style="color: #5b6170">CPU</span><span>Intel Core i5, 6th gen, 2 cores</span>
+<span style="color: #5b6170">Graphics</span><span>integrated Intel HD 520</span>
+<span style="color: #5b6170">Memory</span><span>8 GB</span>
+<span style="color: #5b6170">Drive</span><span>SSD</span>
+</div>
+<p style="margin: 8px 0 0; padding-top: 16px; border-top: 1px dashed #d9dce3; color: #4a5060; line-height: 1.55">No discrete graphics card needed. Runs on x64 and ARM processors.</p>
+<p style="margin: 0; color: #4a5060; line-height: 1.55">Windows 10/11 · macOS 15+ on Apple Silicon · Linux x86_64 (Ubuntu 20.04+, Debian 10+, Fedora and others)</p>
+</div>
+</div>
+</section>
+
+<section id="android" class="wrap sec">
+<div class="rv" style="background: #1e4fd8; border-radius: 40px; padding: 72px 64px; color: #fff; overflow: hidden">
+<p class="mono" style="margin: 0; font-size: 14px; color: #c9d6f7">04 · Android</p>
+<h2 class="h2" style="color: #fff">Even lighter.</h2>
+<p class="lead" style="color: #e3ebfc">The same CAD in your pocket. Same features, same files: start a part on your laptop, finish it on the train.</p>
+<div class="zm" style="margin: 56px auto 0; max-width: 780px">
+<div style="position: relative; padding: 2.2%; border-radius: 6% / 13.5%; background: #1c1f26; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 36px 72px rgba(6,10,30,0.40)">
+<span aria-hidden="true" style="position: absolute; left: 0.85%; top: 50%; width: 0.75%; aspect-ratio: 1; transform: translateY(-50%); border-radius: 50%; background: #3a404c"></span>
+<img src="../assets/img/android-model.webp" alt="BreezeCAD on a phone: a flange in 3D, the feature tree and the tool panel" style="display: block; width: 100%; height: auto; aspect-ratio: 1830 / 824; border-radius: 3.6% / 8%">
+</div>
+</div>
+<div class="g3" style="margin-top: 48px">
+<div><div class="mono" style="font-size: 40px"><span data-bz="size-android">26</span> MB</div><div style="margin-top: 6px; color: #dbe5fb">the whole install file</div></div>
+<div><div class="mono" style="font-size: 40px">60+</div><div style="margin-top: 6px; color: #dbe5fb">fps on a OnePlus Nord CE5 — tell us how it runs on your phone</div></div>
+<div><div class="mono" style="font-size: 40px">9+</div><div style="margin-top: 6px; color: #dbe5fb">Android on 64-bit ARM, phones and tablets</div></div>
+</div>
+</div>
+<div class="g2" style="margin-top: 24px">
+<figure class="rv" style="margin: 0"><img class="shot" src="../assets/img/android-hole.webp" alt="Editing holes on a phone, the confirm button is green" style="aspect-ratio: 1830 / 824"><figcaption style="margin-top: 12px; font-size: 15px; color: #4a5060">Operation modes are icons above the view. Everything selected — ✓ turns green.</figcaption></figure>
+<figure class="rv" style="margin: 0"><img class="shot" src="../assets/img/android-sketch.webp" alt="Sketching on a phone with the droplet cursor" style="aspect-ratio: 1830 / 824"><figcaption style="margin-top: 12px; font-size: 15px; color: #4a5060">The droplet cursor: your finger doesn’t cover the line, the tip draws.</figcaption></figure>
+</div>
+</section>
+
+<section id="access" class="wrap sec">
+<p class="kick rv">05 · access</p>
+<h2 class="h2 rv">Easy access.<br><span style="color: #1e4fd8">And only yours.</span></h2>
+<p class="lead rv">Download and work. The program asks for nothing in return and never phones home.</p>
+<div class="g3" style="margin-top: 48px">
+<div class="tile rv"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1e4fd8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0"></path><path d="M5.5 12a10 10 0 0 1 13 0"></path><path d="M9 15.5a5 5 0 0 1 6 0"></path><path d="M3 3l18 18"></path></svg><h3>No internet</h3><p>Everything works offline — in the workshop, on the road, at the cottage.</p></div>
+<div class="tile rv"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1e4fd8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path><path d="M3 3l18 18"></path></svg><h3>No accounts</h3><p>No sign-up, no log-in. Open it and work.</p></div>
+<div class="tile rv"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1e4fd8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.5 8-8 9-4.5-1-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg><h3>No data collection</h3><p>Your models and actions stay on your device.</p></div>
+<div class="tile rv"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1e4fd8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"></circle><path d="M11 12l9-9"></path><path d="M16 7l3 3"></path><path d="M3 3l18 18"></path></svg><h3>No licenses or keys</h3><p>No activation and no lock to a computer.</p></div>
+<div class="tile rv"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1e4fd8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18"></path><path d="M3 3l18 18"></path></svg><h3>No subscriptions or ads</h3><p>Free forever. A promise, not a trial.</p></div>
+<div class="tile rv"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1e4fd8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5"></path><path d="M16 7l5 5-5 5"></path><path d="M14 4l-4 16"></path></svg><h3>Open source</h3><p>Source code on GitHub, MPL 2.0 license.</p></div>
+</div>
+</section>
+
+<section id="download" class="wrap sec">
+<p class="kick rv">download</p>
+<h2 class="h2 rv">Choose your system.</h2>
+<div class="dl-meta rv"><span>Current version <span class="mono" data-bz="version">0.2.5.1-Beta</span></span><a href="https://github.com/BreezeCAD/breezecad/releases" data-dl-prev>Previous versions</a><a href="https://github.com/BreezeCAD/breezecad/releases/latest" target="_blank" rel="noopener">What’s new ↗</a></div>
+<div id="dl" class="rv" data-root="../">
+<div class="g4" style="margin-top: 40px">
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Windows</span><span style="font-size: 14px; color: #5b6170">10/11, 64-bit · installer</span><a class="btn btn-blue" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-Setup-offline.exe" style="margin-top: 20px">Download</a><a href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-windows.zip" style="font-size: 14px; margin-top: 8px">Portable (zip)</a></div>
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">macOS</span><span style="font-size: 14px; color: #5b6170">15+, Apple Silicon · dmg</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-macos.dmg" style="margin-top: 20px">Download</a></div>
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Linux</span><span style="font-size: 14px; color: #5b6170">x86_64 · tar.gz</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-linux.tar.gz" style="margin-top: 20px">Download</a></div>
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Android</span><span style="font-size: 14px; color: #5b6170">9+, ARM 64-bit · apk</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-android.apk" style="margin-top: 20px">Download</a></div>
+</div>
+</div>
+<dialog id="dl-prev" class="dl-prev" aria-labelledby="dl-prev-t"><div class="dl-prev-in">
+<div class="dl-prev-top"><h2 id="dl-prev-t">Previous versions</h2><form method="dialog"><button class="dl-x" aria-label="Close">×</button></form></div>
+<ul class="dl-prev-list"></ul>
+<div class="dl-prev-foot"><a href="https://github.com/BreezeCAD/breezecad/releases" target="_blank" rel="noopener">All releases on GitHub ↗</a></div>
+</div></dialog>
+</section>
+
+<section id="pain" class="wrap sec">
+<span class="redtag rv">Engineer’s pain</span>
+<h2 class="h2 rv" style="margin-top:18px">Made of pain.</h2>
+<p class="lead rv">Every BreezeCAD feature answers something that annoyed us in other programs for years.</p>
+<div class="pain-teaser">
+<a class="rv" href="pain.html#assembly"><span class="p">One fillet broke the assembly</span><span class="s">Parts hold on to each other</span></a>
+<a class="rv" href="pain.html#controls"><span class="p">Whose mouse is this?</span><span class="s">Controls adapt to you</span></a>
+<a class="rv" href="pain.html#thread"><span class="p">Threads only in the picture</span><span class="s">Threads that actually print</span></a>
+<a class="rv" href="pain.html#windows"><span class="p">Can’t see what to click behind a window</span><span class="s">No windows over the model</span></a>
+</div>
+<p class="rv" style="margin:24px 0 0"><a class="btn btn-ghost" href="pain.html">All episodes →</a></p>
+</section>
+
+<section id="authors" class="wrap sec">
+<p class="kick rv">06 · authors</p>
+<h2 class="h2 rv">By an engineer, for engineers.</h2>
+<p class="lead rv">BreezeCAD isn’t made by corporate programmers but by people who work in CAD every day themselves.</p>
+<div class="g2" style="margin-top: 56px; gap: 40px">
+<div class="rv" style="text-align: center; display: flex; flex-direction: column; align-items: center">
+<div style="position: relative; width: 300px; max-width: 100%">
+<img src="../assets/img/author-verkholashin.webp" alt="Mikhail Verkholashin" style="display: block; width: 100%; height: auto; aspect-ratio: 376 / 444; object-fit: cover; border-radius: 26px; box-shadow: 0 24px 48px rgba(28,31,36,0.14)">
+<span style="position: absolute; left: 50%; bottom: -18px; transform: translateX(-50%); white-space: nowrap; background: #1e4fd8; color: #fff; font-weight: 500; font-size: 15px; padding: 8px 16px; border-radius: 999px">Founder and author</span>
+</div>
+<h3 style="margin: 40px 0 8px; font-size: 30px">Mikhail Verkholashin</h3>
+<p style="margin: 0; max-width: 400px; color: #4a5060; line-height: 1.55">Philosophy, design, every feature — and fixing the bugs testers find.</p>
+</div>
+<div class="rv" style="text-align: center; display: flex; flex-direction: column; align-items: center">
+<div style="position: relative; width: 300px; max-width: 100%">
+<img src="../assets/img/author-afonishev.webp" alt="Mikhail Afonishev" style="display: block; width: 100%; height: auto; aspect-ratio: 376 / 444; object-fit: cover; border-radius: 26px; box-shadow: 0 24px 48px rgba(28,31,36,0.14)">
+<span style="position: absolute; left: 50%; bottom: -18px; transform: translateX(-50%); white-space: nowrap; background: #1e4fd8; color: #fff; font-weight: 500; font-size: 15px; padding: 8px 16px; border-radius: 999px">Module author</span>
+</div>
+<h3 style="margin: 40px 0 8px; font-size: 30px">Mikhail Afonishev</h3>
+<p style="margin: 0; max-width: 400px; color: #4a5060; line-height: 1.55">The MCP module for AI assistants, the standard parts pack and a third of all bug reports.</p>
+</div>
+</div>
+<div class="rv" style="margin-top:56px;text-align:center"><a class="btn btn-ghost" href="people.html">Everyone behind the project →</a></div>
+</section>
+
+<section id="news" class="wrap sec" style="padding-bottom: 120px">
+<p class="kick rv">07 · news</p>
+<h2 class="h2 rv">Project news.</h2>
+<p class="lead rv">Release announcements, “Engineer’s pain” and early builds — wherever suits you.</p>
+<div class="g3" style="margin-top: 48px">
+<a class="card rv" href="https://vk.ru/breezecad" target="_blank" rel="noopener" style="text-decoration: none; color: #1c1f24; display: flex; flex-direction: column; gap: 10px"><span class="kick">news</span><span style="font-size: 26px; font-weight: 600">VK ↗</span><span style="color: #4a5060; line-height: 1.55">Release announcements and “Engineer’s pain” (in Russian).</span></a>
+<a class="card rv" href="https://boosty.to/breezecad" target="_blank" rel="noopener" style="text-decoration: none; color: #fff; background: #1e4fd8; border-color: #1e4fd8; display: flex; flex-direction: column; gap: 10px"><span class="mono" style="font-size: 14px; color: #c9d6f7">support</span><span style="font-size: 26px; font-weight: 600">Boosty ↗</span><span style="color: #e3ebfc; line-height: 1.55">BreezeCAD lives on donations. Test builds come out here first.</span></a>
+<a class="card rv" href="https://github.com/BreezeCAD/breezecad" target="_blank" rel="noopener" style="text-decoration: none; color: #1c1f24; display: flex; flex-direction: column; gap: 10px"><span class="kick">code &amp; reports</span><span style="font-size: 26px; font-weight: 600">GitHub ↗</span><span style="color: #4a5060; line-height: 1.55">Source code, releases and bug reports.</span></a>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #e3e5ea; background: rgba(255,255,255,0.6)">
+<div class="wrap" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding-top: 32px; padding-bottom: 32px">
+<div style="display: flex; align-items: center; gap: 10px">
+<img src="../assets/mark.svg" width="18" height="21" alt="">
+<span style="font-size: 14px; color: #4a5060">© 2026 BreezeCAD · freedom to create</span>
+</div>
+<p style="margin: 0; font-size: 14px; color: #4a5060">This site collects nothing about you: no sign-up, trackers or cookies. <a href="privacy.html">Privacy policy</a></p>
+<nav class="foot-nav" aria-label="Pages"><a href="pain.html">Engineer’s pain</a><a href="modules.html">Modules &amp; libraries</a><a href="people.html">People</a><a href="../" lang="ru" hreflang="ru">Русский</a><span style="color:#8b909c">Web version — soon</span></nav>
+</div>
+</footer>
+
+</div>
+<script src="../assets/part.js"></script>
+<script src="../assets/download.js" defer></script>
+<script>
+(function () {
+  var c = document.getElementById('bz-part');
+  if (!c) return;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // build the part after the first paint, so the page shows at once
+  requestAnimationFrame(function () { setTimeout(function () { bzMountPart(c, { auto: !still }); }, 30); });
+})();
+</script>
+</body>
+</html>

@@ -13,6 +13,10 @@
 <meta property="og:image" content="https://breezecad.ru/assets/img/og.jpg">
 <meta property="og:url" content="https://breezecad.ru/">
 <link rel="canonical" href="https://breezecad.ru/">
+<link rel="alternate" hreflang="ru" href="https://breezecad.ru/">
+<link rel="alternate" hreflang="en" href="https://breezecad.ru/en/">
+<link rel="alternate" hreflang="x-default" href="https://breezecad.ru/">
+<link rel="stylesheet" href="assets/download.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,8 +50,10 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 .h2{margin:14px 0 0;font-size:64px;line-height:1.04;letter-spacing:-0.03em;font-weight:700}
 .lead{margin:20px 0 0;font-size:20px;line-height:1.55;color:#4a5060;max-width:640px}
 .nav a{color:#1c1f24;text-decoration:none;font-size:15px;padding:10px 2px;white-space:nowrap}
-@media (max-width:1320px){.hide-mid{display:none!important}.nav-links{gap:18px!important}}
-@media (max-width:1100px){.nav-soon{display:none!important}}
+@media (max-width:1500px){.hide-mid{display:none!important}}
+@media (max-width:1320px){.nav-links{gap:16px!important}}
+@media (max-width:1180px){.nav-soon{display:none!important}}
+@media (max-width:1060px){.nav-links{display:none!important}}
 .nav a:hover{color:#1e4fd8}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:14px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .25s ease,background .25s ease,border-color .25s ease}
 .btn:hover{transform:translateY(-2px)}
@@ -71,6 +77,10 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .lang button{border:0;background:transparent;font:500 13px 'IBM Plex Mono',monospace;color:#5b6170;min-width:40px;min-height:34px;border-radius:9px;cursor:pointer}
 .lang button.on{background:#1c1f24;color:#fff}
+.lang{display:flex;gap:2px;padding:3px;border-radius:12px;background:#eceef2}
+.lang a{display:inline-flex;align-items:center;justify-content:center;min-width:38px;min-height:34px;border-radius:9px;font:500 13px 'IBM Plex Mono',monospace;color:#5b6170;text-decoration:none}
+.lang a:hover{color:#1c1f24}
+.lang a[aria-current]{background:#1c1f24;color:#fff}
 .shot{display:block;width:100%;height:auto;border-radius:18px;border:1px solid #e3e5ea;background:#fff}
 .step-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
 .step-row.flip .step-text{order:2}
@@ -138,11 +148,13 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 </a>
 <nav class="nav nav-links" style="display: flex; align-items: center; gap: 24px" aria-label="Разделы">
 <a href="pain.html" class="pain-pill">Боль инженера</a>
+<a href="modules.html">Модули и библиотеки</a>
 <a href="people.html">Люди проекта</a>
 <span class="nav-soon" style="color: #8b909c; font-size: 15px; padding: 10px 2px; white-space: nowrap">Веб-версия <span class="mono" style="font-size: 11px; padding: 2px 6px; border-radius: 6px; background: #eceef2; color: #5b6170">скоро</span></span>
 <a href="https://vk.ru/breezecad" target="_blank" rel="noopener">Новости ↗</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0">
+<nav class="lang" aria-label="Язык"><a href="./" lang="ru" aria-current="true">RU</a><a href="en/" lang="en" hreflang="en">EN</a></nav>
 <a href="https://boosty.to/breezecad" target="_blank" rel="noopener" class="btn btn-ghost hbtn" style="min-height: 44px; padding: 0 16px; font-size: 15px; border-radius: 12px">Поддержать</a>
 <a class="btn btn-blue hbtn" href="#download" style="min-height: 44px; padding: 0 18px; font-size: 15px; border-radius: 12px">Скачать</a>
 </div>
@@ -158,7 +170,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 Скачать BreezeCAD</a>
 <a class="btn btn-ghost" href="#interface">Посмотреть в деле</a>
 </div>
-<p class="mono in d3" style="margin: 16px 0 0; font-size: 13px; color: #5b6170">0.2.4-Beta · Windows · macOS · Linux · Android</p>
+<p class="mono in d3" style="margin: 16px 0 0; font-size: 13px; color: #5b6170"><span data-bz="version">0.2.5.1-Beta</span> · Windows · macOS · Linux · Android</p>
 <div class="part-in" style="position: relative; margin-top: 24px">
 <div aria-hidden="true" style="position: absolute; left: 50%; bottom: 34px; width: 340px; height: 46px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(28,31,36,0.16), rgba(28,31,36,0))"></div>
 <div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(30,79,216,0.10), rgba(30,79,216,0))"></div>
@@ -196,11 +208,11 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 <h2 class="h2 rv">Воплощение невесомости.</h2>
 <p class="lead rv">Вся программа целиком — меньше сотни мегабайт. Скачивается за минуту даже по мобильному интернету.</p>
 <div class="card rv" style="margin-top: 48px; display: flex; flex-direction: column; gap: 26px">
-<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">macOS</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" style="width: 19%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right">19<span style="font-size: 15px; color: #5b6170"> МБ</span></span></div>
-<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Android</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" style="width: 26%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right">26<span style="font-size: 15px; color: #5b6170"> МБ</span></span></div>
-<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Linux</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" style="width: 34%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right">34<span style="font-size: 15px; color: #5b6170"> МБ</span></span></div>
-<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Windows</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" style="width: 82%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right">82<span style="font-size: 15px; color: #5b6170"> МБ</span></span></div>
-<div style="display: flex; justify-content: space-between; gap: 12px; border-top: 1px dashed #d9dce3; padding-top: 14px"><span class="mono" style="font-size: 12px; color: #5b6170">архив для скачивания · 0.2.4-Beta</span><span class="mono" style="font-size: 12px; color: #5b6170">шкала — 100 МБ</span></div>
+<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">macOS</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" data-bz="bar-macos" style="width: 19%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right"><span data-bz="size-macos">19</span><span style="font-size: 15px; color: #5b6170"> МБ</span></span></div>
+<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Android</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" data-bz="bar-android" style="width: 26%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right"><span data-bz="size-android">26</span><span style="font-size: 15px; color: #5b6170"> МБ</span></span></div>
+<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Linux</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" data-bz="bar-linux" style="width: 33%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right"><span data-bz="size-linux">33</span><span style="font-size: 15px; color: #5b6170"> МБ</span></span></div>
+<div class="wrow" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; align-items: center; gap: 20px"><span style="font-size: 18px; font-weight: 600">Windows</span><div style="background: #eef0f3; border-radius: 7px"><div class="bar gr" data-bz="bar-windows" style="width: 79%"></div></div><span class="mono" style="font-size: 30px; color: #1e4fd8; text-align: right"><span data-bz="size-windows">79</span><span style="font-size: 15px; color: #5b6170"> МБ</span></span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; border-top: 1px dashed #d9dce3; padding-top: 14px"><span class="mono" style="font-size: 12px; color: #5b6170">архив без установщика · <span data-bz="version">0.2.5.1-Beta</span></span><span class="mono" style="font-size: 12px; color: #5b6170">шкала — 100 МБ</span></div>
 </div>
 </section>
 
@@ -222,7 +234,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 <span style="color: #5b6170">Диск</span><span>SSD</span>
 </div>
 <p style="margin: 8px 0 0; padding-top: 16px; border-top: 1px dashed #d9dce3; color: #4a5060; line-height: 1.55">Отдельная видеокарта не нужна. Работает на процессорах x64 и ARM.</p>
-<p style="margin: 0; color: #4a5060; line-height: 1.55">Windows 10/11 · macOS 14+ на Apple Silicon · Linux x86_64 (Ubuntu 20.04+, Debian 10+, Fedora и другие)</p>
+<p style="margin: 0; color: #4a5060; line-height: 1.55">Windows 10/11 · macOS 15+ на Apple Silicon · Linux x86_64 (Ubuntu 20.04+, Debian 10+, Fedora и другие)</p>
 </div>
 </div>
 </section>
@@ -239,7 +251,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 </div>
 </div>
 <div class="g3" style="margin-top: 48px">
-<div><div class="mono" style="font-size: 40px">26 МБ</div><div style="margin-top: 6px; color: #dbe5fb">весь установочный файл</div></div>
+<div><div class="mono" style="font-size: 40px"><span data-bz="size-android">26</span> МБ</div><div style="margin-top: 6px; color: #dbe5fb">весь установочный файл</div></div>
 <div><div class="mono" style="font-size: 40px">60+</div><div style="margin-top: 6px; color: #dbe5fb">кадров/с на OnePlus Nord CE5 — на других телефонах ждём ваших отзывов</div></div>
 <div><div class="mono" style="font-size: 40px">9+</div><div style="margin-top: 6px; color: #dbe5fb">Android на ARM 64-бит, телефоны и планшеты</div></div>
 </div>
@@ -267,14 +279,20 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 <section id="download" class="wrap sec">
 <p class="kick rv">скачать</p>
 <h2 class="h2 rv">Выберите свою систему.</h2>
-<p class="lead rv">Ссылки всегда ведут на последнюю версию — сейчас это <span class="mono" style="color: #1c1f24">0.2.4-Beta</span>.</p>
-<div class="g4" style="margin-top: 48px">
-<div class="card rv" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Windows</span><span style="font-size: 14px; color: #5b6170">10/11, 64-бит</span><span class="mono" style="font-size: 13px; color: #5b6170">zip · 82 МБ</span><a class="btn btn-blue" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-windows.zip" style="margin-top: 20px">Скачать</a></div>
-<div class="card rv" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">macOS</span><span style="font-size: 14px; color: #5b6170">14+, Apple Silicon</span><span class="mono" style="font-size: 13px; color: #5b6170">zip · 19 МБ</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-macos.zip" style="margin-top: 20px">Скачать</a></div>
-<div class="card rv" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Linux</span><span style="font-size: 14px; color: #5b6170">x86_64</span><span class="mono" style="font-size: 13px; color: #5b6170">tar.gz · 34 МБ</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-linux.tar.gz" style="margin-top: 20px">Скачать</a></div>
-<div class="card rv" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Android</span><span style="font-size: 14px; color: #5b6170">9+, ARM 64-бит</span><span class="mono" style="font-size: 13px; color: #5b6170">apk · 26 МБ</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-android.apk" style="margin-top: 20px">Скачать</a></div>
+<div class="dl-meta rv"><span>Сейчас это <span class="mono" data-bz="version">0.2.5.1-Beta</span></span><a href="https://github.com/BreezeCAD/breezecad/releases" data-dl-prev>Предыдущие версии</a><a href="https://github.com/BreezeCAD/breezecad/releases/latest" target="_blank" rel="noopener">Что нового ↗</a></div>
+<div id="dl" class="rv" data-root="">
+<div class="g4" style="margin-top: 40px">
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Windows</span><span style="font-size: 14px; color: #5b6170">10/11, 64-бит · установщик</span><a class="btn btn-blue" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-Setup-offline.exe" style="margin-top: 20px">Скачать</a><a href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-windows.zip" style="font-size: 14px; margin-top: 8px">Портативная (zip)</a></div>
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">macOS</span><span style="font-size: 14px; color: #5b6170">15+, Apple Silicon · dmg</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-macos.dmg" style="margin-top: 20px">Скачать</a></div>
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Linux</span><span style="font-size: 14px; color: #5b6170">x86_64 · tar.gz</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-linux.tar.gz" style="margin-top: 20px">Скачать</a></div>
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 24px; font-weight: 600">Android</span><span style="font-size: 14px; color: #5b6170">9+, ARM 64-бит · apk</span><a class="btn btn-ghost" href="https://github.com/BreezeCAD/breezecad/releases/latest/download/BreezeCAD-android.apk" style="margin-top: 20px">Скачать</a></div>
 </div>
-<p class="rv" style="margin: 20px 0 0; font-size: 15px; color: #5b6170"><a href="https://github.com/BreezeCAD/breezecad/releases" target="_blank" rel="noopener">Все выпуски и что нового ↗</a></p>
+</div>
+<dialog id="dl-prev" class="dl-prev" aria-labelledby="dl-prev-t"><div class="dl-prev-in">
+<div class="dl-prev-top"><h2 id="dl-prev-t">Предыдущие версии</h2><form method="dialog"><button class="dl-x" aria-label="Закрыть">×</button></form></div>
+<ul class="dl-prev-list"></ul>
+<div class="dl-prev-foot"><a href="https://github.com/BreezeCAD/breezecad/releases" target="_blank" rel="noopener">Все выпуски на GitHub ↗</a></div>
+</div></dialog>
 </section>
 
 <section id="pain" class="wrap sec">
@@ -282,10 +300,10 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 <h2 class="h2 rv" style="margin-top:18px">Сделано из боли.</h2>
 <p class="lead rv">Каждая функция BreezeCAD — ответ на то, что годами бесило нас в других программах.</p>
 <div class="pain-teaser">
+<a class="rv" href="pain.html#assembly"><span class="p">Скруглил кромку — развалил сборку</span><span class="s">Детали держатся друг за друга</span></a>
 <a class="rv" href="pain.html#controls"><span class="p">Чья это мышь?</span><span class="s">Управление подстраивается под вас</span></a>
 <a class="rv" href="pain.html#thread"><span class="p">Резьба только на картинке</span><span class="s">Резьба, которая печатается</span></a>
 <a class="rv" href="pain.html#windows"><span class="p">За окном не видно, что нажать</span><span class="s">Никаких окон поверх модели</span></a>
-<a class="rv" href="pain.html#autosave"><span class="p">Ctrl+S после каждой операции</span><span class="s">Работа не пропадёт</span></a>
 </div>
 <p class="rv" style="margin:24px 0 0"><a class="btn btn-ghost" href="pain.html">Все выпуски рубрики →</a></p>
 </section>
@@ -333,12 +351,13 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 <span style="font-size: 14px; color: #4a5060">© 2026 BreezeCAD (БризКАД) · свобода творить</span>
 </div>
 <p style="margin: 0; font-size: 14px; color: #4a5060">Сайт ничего о вас не собирает: без регистрации, трекеров и cookie. <a href="privacy.html">Политика конфиденциальности</a></p>
-<nav class="foot-nav" aria-label="Страницы"><a href="pain.html">Боль инженера</a><a href="people.html">Люди проекта</a><span style="color:#8b909c">Веб-версия — скоро</span></nav>
+<nav class="foot-nav" aria-label="Страницы"><a href="pain.html">Боль инженера</a><a href="modules.html">Модули и библиотеки</a><a href="people.html">Люди проекта</a><a href="en/" lang="en" hreflang="en">English</a><span style="color:#8b909c">Веб-версия — скоро</span></nav>
 </div>
 </footer>
 
 </div>
 <script src="assets/part.js"></script>
+<script src="assets/download.js" defer></script>
 <script>
 (function () {
   var c = document.getElementById('bz-part');

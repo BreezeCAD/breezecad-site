@@ -4,13 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Боль инженера — BreezeCAD</title>
-<meta name="description" content="Что годами бесило инженера в САПР — и как это решено в BreezeCAD.">
+<meta name="description" content="Что годами бесило инженера в САПР — и как это решено в BreezeCAD: управление, резьба, окна, автосохранение, сборки.">
 <meta name="theme-color" content="#f5f6f8">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Боль инженера — BreezeCAD">
 <meta property="og:description" content="Что годами бесило инженера в САПР — и как это решено в BreezeCAD.">
 <meta property="og:image" content="https://breezecad.ru/assets/img/og.jpg">
+<link rel="canonical" href="https://breezecad.ru/pain.html">
+<link rel="alternate" hreflang="ru" href="https://breezecad.ru/pain.html">
+<link rel="alternate" hreflang="en" href="https://breezecad.ru/en/pain.html">
 <link rel="stylesheet" href="assets/pages.css">
 <style>
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
@@ -59,11 +62,13 @@
 <a class="brand" href="./" aria-label="BreezeCAD — на главную"><img src="assets/mark.svg" width="24" height="28" alt=""><b>Breeze<span>CAD</span></b><span class="tag">— свобода творить</span></a>
 <nav class="nav" aria-label="Разделы">
 <a href="pain.html" class="pill" aria-current="page">Боль инженера</a>
+<a href="modules.html">Модули и библиотеки</a>
 <a href="people.html">Люди проекта</a>
 <span class="soon">Веб-версия <span>скоро</span></span>
 <a href="https://vk.ru/breezecad" target="_blank" rel="noopener">Новости ↗</a>
 </nav>
-<div style="display:flex;gap:10px;flex-shrink:0">
+<div style="display:flex;gap:10px;flex-shrink:0;align-items:center">
+<nav class="lang" aria-label="Язык"><a href="pain.html" lang="ru" aria-current="true">RU</a><a href="en/pain.html" lang="en" hreflang="en">EN</a></nav>
 <a class="btn btn-ghost hbtn" href="https://boosty.to/breezecad" target="_blank" rel="noopener">Поддержать</a>
 <a class="btn btn-blue hbtn" href="./#download">Скачать</a>
 </div>
@@ -79,6 +84,7 @@
 <a href="#thread"><span>02</span>Резьба, которая печатается</a>
 <a href="#windows"><span>03</span>Никаких окон поверх модели</a>
 <a href="#autosave"><span>04</span>Работа не пропадёт</a>
+<a href="#assembly"><span>05</span>Детали держатся друг за друга</a>
 </nav>
 </section>
 <section id="controls" class="ep wrap">
@@ -92,7 +98,7 @@
 <span class="fix-tag mono">решение</span>
 <h2 class="h2">Управление подстраивается под вас.</h2>
 <ul class="checks">
-<li>Готовые наборы мыши — как в Inventor, КОМПАС-3D, SolidWorks и Blender: выбрал один, и руки работают как привыкли.</li>
+<li>Готовые наборы мыши под привычки из популярных программ: выбрал один, и руки работают как привыкли.</li>
 <li>Или свой: вращение, сдвиг и масштаб на любую кнопку с Shift, Ctrl или Alt, направление колеса, скорость и стиль вращения.</li>
 <li>Сочетания клавиш — готовыми наборами или как угодно. Свой набор сохраняется в файл и переезжает с вами на другой компьютер.</li>
 <li>Отдельная вкладка для тачпада: два пальца с модификаторами, щипок, поворот.</li>
@@ -205,6 +211,39 @@
 </ol></figcaption>
 </figure>
 </section>
+<section id="assembly" class="ep wrap">
+<div class="ep-text">
+<div class="pain rv">
+<span class="pain-tag mono">боль 05</span>
+<h3>Скруглил одну кромку — развалил полсборки</h3>
+<p>Делаю корпус под плату: короб строю прямо от основания, контур спроецировал, зазор 0,2 мм — красота. Потом замечаю острые кромки и ставлю скругление 1 мм. Захожу в короб — а там эскиз красный: проекции потеряли свои рёбра, за ними легли выдавливание и сопряжения. Миллиметровое скругление, а дальше час археологии: что от чего строилось и как это теперь склеить. Хорошо хоть Ctrl+S к тому времени уже был рефлексом.</p>
+</div>
+<div class="fix rv">
+<span class="fix-tag mono">решение · 0.2.5.1</span>
+<h2 class="h2">Детали держатся друг за друга.</h2>
+<ul class="checks">
+<li>Проекция опирается не на ребро тела, а на линию эскиза, из которой оно выросло. Скругление, фаска или оболочка оставляют линию линией: она может стать короче, но привязка держится.</li>
+<li>Проекция теряется, только если исходную линию удалили. Старые файлы подхватывают это сами при открытии.</li>
+<li>Поменяли сам эскиз — дорисовали контур, сдвинули размер? После правки программа покажет окно «Обнаружено изменение, затрагивающее другие детали» — по одной детали за раз.</li>
+<li>Четыре ответа: оставить как есть, адаптировать автоматически, повторить новый контур с зазором (мимикрирование) или открыть эскизы на ручную правку — с откатом зависимостей к тому, что было до поломки.</li>
+<li>Справа превью: изменившийся объём подсвечен красной дымкой, видной с любого ракурса. Каждое решение — один шаг отмены.</li>
+</ul>
+<p class="punch mono">Скругляйте смело — короб не обидится.</p>
+</div>
+</div>
+<figure class="ep-shot zm">
+<div class="frame"><div class="pic"><img src="assets/img/pain-assembly.webp" width="1060" height="660" alt="Окно «Обнаружено изменение, затрагивающее другие детали»: выбрано мимикрирование с зазором 0,2 мм, справа превью короба с красной дымкой изменившегося объёма" loading="lazy">
+<span class="dot" style="left:4.3%;top:48.8%" aria-hidden="true">1</span>
+<span class="dot" style="left:5.4%;top:59.5%" aria-hidden="true">2</span>
+<span class="dot" style="left:86.8%;top:62%" aria-hidden="true">3</span>
+</div></div>
+<figcaption><ol class="legend">
+<li><span class="num">1</span>Четыре варианта на каждую деталь</li>
+<li><span class="num">2</span>Зазор для мимикрирования</li>
+<li><span class="num">3</span>Что изменится — красной дымкой</li>
+</ol></figcaption>
+</figure>
+</section>
 <section class="wrap">
 <div class="card final rv">
 <span class="redtag">Боль инженера</span>
@@ -219,7 +258,7 @@
 </main>
 <footer class="ftr"><div class="wrap">
 <div style="display:flex;align-items:center;gap:10px"><img src="assets/mark.svg" width="18" height="21" alt=""><span>© 2026 BreezeCAD · свобода творить</span></div>
-<nav aria-label="Страницы"><a href="./">Главная</a><a href="pain.html">Боль инженера</a><a href="people.html">Люди проекта</a><a href="privacy.html">Конфиденциальность</a></nav>
+<nav aria-label="Страницы"><a href="./">Главная</a><a href="pain.html">Боль инженера</a><a href="modules.html">Модули и библиотеки</a><a href="people.html">Люди проекта</a><a href="privacy.html">Конфиденциальность</a><a href="en/pain.html" lang="en" hreflang="en">English</a></nav>
 </div></footer>
 </body>
 </html>

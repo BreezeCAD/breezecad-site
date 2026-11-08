@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://breezecad.ru/</loc><lastmod>2026-11-08</lastmod><priority>1.0</priority></url>
-  <url><loc>https://breezecad.ru/pain.html</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
-  <url><loc>https://breezecad.ru/people.html</loc><lastmod>2026-10-25</lastmod><priority>0.6</priority></url>
-  <url><loc>https://breezecad.ru/privacy.html</loc><lastmod>2026-10-25</lastmod><priority>0.3</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://breezecad.ru/</loc><lastmod>2026-11-08</lastmod><priority>1.0</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/"/></url>
+  <url><loc>https://breezecad.ru/en/</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/"/></url>
+  <url><loc>https://breezecad.ru/pain.html</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/pain.html"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/pain.html"/></url>
+  <url><loc>https://breezecad.ru/en/pain.html</loc><lastmod>2026-11-08</lastmod><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/pain.html"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/pain.html"/></url>
+  <url><loc>https://breezecad.ru/modules.html</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/modules.html"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/modules.html"/></url>
+  <url><loc>https://breezecad.ru/en/modules.html</loc><lastmod>2026-11-08</lastmod><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/modules.html"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/modules.html"/></url>
+  <url><loc>https://breezecad.ru/people.html</loc><lastmod>2026-11-08</lastmod><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/people.html"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/people.html"/></url>
+  <url><loc>https://breezecad.ru/en/people.html</loc><lastmod>2026-11-08</lastmod><priority>0.5</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/people.html"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/people.html"/></url>
+  <url><loc>https://breezecad.ru/privacy.html</loc><lastmod>2026-11-08</lastmod><priority>0.3</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/privacy.html"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/privacy.html"/></url>
+  <url><loc>https://breezecad.ru/en/privacy.html</loc><lastmod>2026-11-08</lastmod><priority>0.2</priority><xhtml:link rel="alternate" hreflang="ru" href="https://breezecad.ru/privacy.html"/><xhtml:link rel="alternate" hreflang="en" href="https://breezecad.ru/en/privacy.html"/></url>
 </urlset>
