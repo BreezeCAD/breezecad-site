@@ -13,5 +13,5 @@
 | `assets/img/` | скриншоты программы и фото авторов |
 
 Кнопки «Скачать» ведут на `releases/latest/download/<файл>` репозитория
-[MikeVerx/breezecad](https://github.com/MikeVerx/breezecad) — при каждом новом выпуске
+[BreezeCAD/breezecad](https://github.com/BreezeCAD/breezecad) — при каждом новом выпуске
 сайт сам отдаёт свежую версию, править ничего не нужно.
