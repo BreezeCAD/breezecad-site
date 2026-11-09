@@ -58,6 +58,9 @@
   function build(data) {
     var items = (data.items || []).filter(function (i) { return i && i.name && i.type; });
     root.textContent = '';
+    // ссылка на конкретный модуль: modules.html#m-<id> (с дорожной карты)
+    var deep = /^#m-/.test(location.hash) ? location.hash.slice(3) : '';
+    items.forEach(function (i) { if (i.id === deep) state.type = i.type; });
 
     // вкладки
     var tabs = el('div', 'cat-tabs');
@@ -146,6 +149,10 @@
     }
 
     render();
+    if (deep) {
+      var target = document.getElementById('m-' + deep);
+      if (target) { target.classList.add('hl'); target.scrollIntoView({ block: 'center' }); }
+    }
   }
 
   function card(i) {

@@ -53,10 +53,11 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 .h2{margin:14px 0 0;font-size:64px;line-height:1.04;letter-spacing:-0.03em;font-weight:700}
 .lead{margin:20px 0 0;font-size:20px;line-height:1.55;color:#4a5060;max-width:640px}
 .nav a{color:#1c1f24;text-decoration:none;font-size:15px;padding:10px 2px;white-space:nowrap}
-@media (max-width:1500px){.hide-mid{display:none!important}}
+@media (max-width:1660px){.hide-mid{display:none!important}}
 @media (max-width:1320px){.nav-links{gap:16px!important}}
-@media (max-width:1180px){.nav-soon{display:none!important}}
-@media (max-width:1060px){.nav-links{display:none!important}}
+@media (max-width:1960px){.nav-soon{display:none!important}}
+@media (max-width:1240px){.nav-news{display:none!important}}
+@media (max-width:1100px){.nav-links{display:none!important}}
 .nav a:hover{color:#1e4fd8}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:14px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .25s ease,background .25s ease,border-color .25s ease}
 .btn:hover{transform:translateY(-2px)}
@@ -139,6 +140,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 .step-text h3{font-size:26px}
 }
 </style>
+<link rel="stylesheet" href="../assets/roadmap.css">
 </head>
 <body>
 <div class="bz">
@@ -153,9 +155,10 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 <nav class="nav nav-links" style="display: flex; align-items: center; gap: 24px" aria-label="Sections">
 <a href="pain.html" class="pain-pill">Engineer’s pain</a>
 <a href="modules.html">Modules &amp; libraries</a>
+<a href="roadmap.html">Roadmap</a>
 <a href="people.html">People</a>
 <span class="nav-soon" style="color: #8b909c; font-size: 15px; padding: 10px 2px; white-space: nowrap">Web version <span class="mono" style="font-size: 11px; padding: 2px 6px; border-radius: 6px; background: #eceef2; color: #5b6170">soon</span></span>
-<a href="https://vk.ru/breezecad" target="_blank" rel="noopener">News ↗</a>
+<a class="nav-news" href="https://vk.ru/breezecad" target="_blank" rel="noopener">News ↗</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0">
 <nav class="lang" aria-label="Language"><a href="../" lang="ru" hreflang="ru">RU</a><a href="./" lang="en" aria-current="true">EN</a></nav>
@@ -337,8 +340,19 @@ Download BreezeCAD</a>
 <div class="rv" style="margin-top:56px;text-align:center"><a class="btn btn-ghost" href="people.html">Everyone behind the project →</a></div>
 </section>
 
+<section id="roadmap" class="wrap sec">
+<p class="kick rv">07 · where we grow</p>
+<h2 class="h2 rv">Which way the wind blows.</h2>
+<p class="lead rv">The trunk is the program, the branches are modules and libraries. No deadlines — just the order.</p>
+<div class="rmt rv">
+<div class="rmt-col here"><span class="rm-node"></span><div class="rmt-card"><p class="rmt-t">now · <span data-bz="version">0.2.5.1-Beta</span></p><h3>Assemblies notice changes</h3><p>Change a part and the program shows which neighbours it affects — and asks what to do with them.</p></div></div>
+<div class="rmt-col now"><span class="rm-node"></span><div class="rmt-card"><p class="rmt-t">growing now</p><ul><li>Continue on device</li><li>iPhone and iPad</li><li>Module windows</li></ul></div></div>
+<div class="rmt-col next"><span class="rm-node"></span><div class="rmt-card"><p class="rmt-t">next</p><ul><li>STEP and STL import</li><li>Subassemblies</li><li>Drawings</li><li>Files for years to come</li><li class="goal">First stable version</li></ul></div></div>
+</div>
+<div class="rmt-foot rv"><div class="rmt-fresh" id="rm-fresh" data-src="../data/registry-index.json"><span class="rmt-t">new branches</span><a class="rm-leaf lib" data-id="diy-motion" href="modules.html#m-diy-motion"><i></i><span><b>DIY: motors, guides, drives</b><small>M. V. Verkholashin</small></span></a><a class="rm-leaf" data-id="languages" href="modules.html#m-languages"><i></i><span><b>Language packs</b><small>M. V. Verkholashin</small></span></a><a class="rm-leaf" data-id="mcp" href="modules.html#m-mcp"><i></i><span><b>MCP server for AI assistants</b><small>Mikhail Afonishev</small></span></a></div><a class="btn btn-ghost" href="roadmap.html">The whole roadmap →</a></div>
+</section>
 <section id="news" class="wrap sec" style="padding-bottom: 120px">
-<p class="kick rv">07 · news</p>
+<p class="kick rv">08 · news</p>
 <h2 class="h2 rv">Project news.</h2>
 <p class="lead rv">Release announcements, “Engineer’s pain” and early builds — wherever suits you.</p>
 <div class="g3" style="margin-top: 48px">
@@ -355,7 +369,7 @@ Download BreezeCAD</a>
 <span style="font-size: 14px; color: #4a5060">© 2026 BreezeCAD · freedom to create</span>
 </div>
 <p style="margin: 0; font-size: 14px; color: #4a5060">This site collects nothing about you: no sign-up, trackers or cookies. <a href="privacy.html">Privacy policy</a></p>
-<nav class="foot-nav" aria-label="Pages"><a href="pain.html">Engineer’s pain</a><a href="modules.html">Modules &amp; libraries</a><a href="people.html">People</a><a href="../" lang="ru" hreflang="ru">Русский</a><span style="color:#8b909c">Web version — soon</span></nav>
+<nav class="foot-nav" aria-label="Pages"><a href="pain.html">Engineer’s pain</a><a href="modules.html">Modules &amp; libraries</a><a href="roadmap.html">Roadmap</a><a href="people.html">People</a><a href="../" lang="ru" hreflang="ru">Русский</a><span style="color:#8b909c">Web version — soon</span></nav>
 </div>
 </footer>
 
@@ -371,5 +385,6 @@ Download BreezeCAD</a>
   requestAnimationFrame(function () { setTimeout(function () { bzMountPart(c, { auto: !still }); }, 30); });
 })();
 </script>
+<script src="../assets/roadmap.js" defer></script>
 </body>
 </html>
