@@ -85,4 +85,4 @@ a{color:var(--blue)}a:hover{color:var(--blue-dk)}
 .lang a{display:inline-flex;align-items:center;justify-content:center;min-width:38px;min-height:34px;border-radius:9px;font:500 13px 'IBM Plex Mono',monospace;color:var(--muted);text-decoration:none}
 .lang a:hover{color:var(--ink)}
 .lang a[aria-current]{background:var(--ink);color:#fff}
-@media (max-width:600px){.lang{display:none}}
+@media (max-width:600px){.lang a{min-width:34px;min-height:32px}}
