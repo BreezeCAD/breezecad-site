@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дорожная карта — BreezeCAD</title>
+<meta name="description" content="Куда растёт BreezeCAD: что уже выросло, что растёт сейчас и что дальше. Ствол — программа, ветви — модули и библиотеки.">
+<meta name="theme-color" content="#f5f6f8">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-120.png" type="image/png" sizes="120x120">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Дорожная карта — BreezeCAD">
+<meta property="og:description" content="План и актуальный статус BreezeCAD — порядок, а не сроки.">
+<meta property="og:image" content="https://breezecad.ru/assets/img/og.jpg">
+<meta property="og:url" content="https://breezecad.ru/roadmap.html">
+<link rel="canonical" href="https://breezecad.ru/roadmap.html">
+<link rel="alternate" hreflang="ru" href="https://breezecad.ru/roadmap.html">
+<link rel="alternate" hreflang="en" href="https://breezecad.ru/en/roadmap.html">
+<link rel="alternate" hreflang="x-default" href="https://breezecad.ru/roadmap.html">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/catalog.css">
+<link rel="stylesheet" href="assets/roadmap.css">
+</head>
+<body>
+<header class="hdr"><div class="wrap">
+<a class="brand" href="./" aria-label="BreezeCAD — на главную"><img src="assets/mark.svg" width="24" height="28" alt=""><b>Breeze<span>CAD</span></b><span class="tag">— свобода творить</span></a>
+<nav class="nav" aria-label="Разделы">
+<a href="pain.html" class="pill">Боль инженера</a>
+<a href="modules.html">Модули и библиотеки</a>
+<a href="roadmap.html" aria-current="page">Дорожная карта</a>
+<a href="people.html">Люди проекта</a>
+<span class="soon">Веб-версия <span>скоро</span></span>
+<a class="news" href="https://vk.ru/breezecad" target="_blank" rel="noopener">Новости ↗</a>
+</nav>
+<div style="display:flex;gap:10px;flex-shrink:0;align-items:center">
+<nav class="lang" aria-label="Язык"><a href="roadmap.html" lang="ru" aria-current="true">RU</a><a href="en/roadmap.html" lang="en" hreflang="en">EN</a></nav>
+<a class="btn btn-ghost hbtn" href="https://boosty.to/breezecad" target="_blank" rel="noopener">Поддержать</a>
+<a class="btn btn-blue hbtn" href="./#download">Скачать</a>
+</div>
+</div></header>
+<main>
+<section class="wrap hero">
+<p class="kick in">дорожная карта</p>
+<h1 class="h1 in d1">Куда дует ветер.</h1>
+<p class="lead in d2">Ствол — сама программа. Ветви — модули и библиотеки: они растут рядом со стволом и не утяжеляют его. Сроков не обещаем — только порядок.</p>
+<div class="rm-legend in d3" aria-hidden="true"><span><i class="l-done"></i>выросло</span><span><i class="l-here"></i>текущая версия</span><span><i class="l-now"></i>растёт сейчас</span><span><i class="l-next"></i>дальше</span><span><i class="l-leaf"></i>модуль</span><span><i class="l-lib"></i>библиотека</span></div>
+</section>
+<section class="wrap">
+<ol class="rm" id="rm" data-src="data/registry-index.json" aria-label="Дорожная карта BreezeCAD">
+<li class="rm-stage is-done rm-root"><div class="rm-leaves"></div><div class="rm-axis"></div><div class="rm-body"><p class="rm-stage-t"><b>выросло</b> · октябрь — ноябрь 2026</p></div></li>
+<li class="is-done" data-ver="0.2.1"><div class="rm-leaves">
+<a class="rm-leaf" data-id="mcp" href="modules.html#m-mcp"><i></i><span><b>MCP-сервер для нейросетей</b><small>Михаил Афонишев</small></span></a>
+<a class="rm-leaf" data-id="module-template" href="modules.html#m-module-template"><i></i><span><b>Шаблон модуля</b><small>Михаил Афонишев</small></span></a>
+</div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><span class="rm-ver">0.2.1</span><h3>Первая бета</h3><p>Детали, эскизы с зависимостями, сборки и модули. Сразу на Windows, Linux и macOS.</p></div></li>
+<li class="is-done" data-ver="0.2.2"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><span class="rm-ver">0.2.2</span><h3>Программа не падает</h3><p>Сбой одного инструмента больше не обрывает работу. Если всё же случилось страшное — понятное окно с кодом ошибки.</p></div></li>
+<li class="is-done" data-ver="0.2.3"><div class="rm-leaves">
+<a class="rm-leaf lib" data-id="steel-stock" href="modules.html#m-steel-stock"><i></i><span><b>Металлопрокат</b><small>Михаил Афонишев · встроена</small></span></a>
+</div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><span class="rm-ver">0.2.3</span><h3>Android и стандартные изделия</h3><p>Полноценная версия для телефона и планшета — те же файлы, что на компьютере. Библиотека стандартных изделий.</p></div></li>
+<li class="is-done" data-ver="0.2.4"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><span class="rm-ver">0.2.4</span><h3>Сборки, в которых проектируют</h3><p>Правка детали прямо в сборке, новая деталь на месте, геометрия соседей под рукой.</p></div></li>
+<li class="is-done" data-ver="0.2.5"><div class="rm-leaves">
+<a class="rm-leaf" data-id="languages" href="modules.html#m-languages"><i></i><span><b>Языковые пакеты</b><small>Верхолашин М. В.</small></span></a>
+</div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><span class="rm-ver">0.2.5</span><h3>Установщики и 16 языков</h3><p>Установщики для всех систем, листовой металл с развёрткой, резьбы с посадками под печать, проект одним файлом.</p></div></li>
+<li class="is-now" data-ver="0.2.5.1"><div class="rm-leaves">
+<a class="rm-leaf lib" data-id="diy-motion" href="modules.html#m-diy-motion"><i></i><span><b>DIY: двигатели, направляющие, передачи</b><small>Верхолашин М. В.</small></span></a>
+</div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><span class="rm-ver">0.2.5.1</span><span class="rm-here">вы здесь</span><h3>Сборки следят за изменениями</h3><p>Поменяли деталь — программа покажет, каких соседей это задело, и спросит, что с ними делать.</p></div></li>
+<li class="rm-stage is-next"><div class="rm-leaves"></div><div class="rm-axis"></div><div class="rm-body"><p class="rm-stage-t"><b>растёт сейчас</b></p></div></li>
+<li class="is-next"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Продолжить на устройстве</h3><p>Начали на компьютере — продолжили на телефоне. Проект передаётся по QR-коду напрямую, с шифрованием и без облаков.</p></div></li>
+<li class="is-next"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>iPhone и iPad</h3><p>Пятая платформа — с тем же интерфейсом и теми же файлами.</p></div></li>
+<li class="is-next"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Окна модулей</h3><p>Модули получают свои окна, пункты меню и кнопки на ленте — расширять программу станет проще.</p></div></li>
+<li class="rm-stage is-later"><div class="rm-leaves"></div><div class="rm-axis"></div><div class="rm-body"><p class="rm-stage-t"><b>дальше</b> · к первой стабильной версии</p></div></li>
+<li class="is-later"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Импорт STEP и STL</h3><p>Модели поставщиков и файлы для печати открываются прямо в программе.</p></div></li>
+<li class="is-later"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Подсборки</h3><p>Сборка внутри сборки — для станков и машин крупнее среднего.</p></div></li>
+<li class="is-later"><div class="rm-leaves">
+<span class="rm-leaf plan"><i></i><span><b>Чертежи · вариант А</b><small>Верхолашин М. В.</small></span></span>
+<span class="rm-leaf plan"><i></i><span><b>Чертежи · вариант Б</b><small>Михаил Афонишев</small></span></span>
+</div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Чертежи</h3><p>Модулями, как и всё большое: два подхода, два автора. Какой станет основным, решит сообщество голосованием.</p></div></li>
+<li class="is-later"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Файлы на годы вперёд</h3><p>Когда все функции отлажены — один долгоживущий формат. Новые версии открывают всё, что сделано в прошлых, а модули записывают своё, не ломая его.</p></div></li>
+<li class="is-later rm-major"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Первая стабильная версия</h3><p>Можно вести долгие проекты без оглядки.</p></div></li>
+<li class="rm-stage is-later"><div class="rm-leaves"></div><div class="rm-axis"></div><div class="rm-body"><p class="rm-stage-t"><b>в планах</b></p></div></li>
+<li class="is-later"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Дерево построения из чужих моделей</h3><p>Импортированная деталь превращается в редактируемое дерево операций, а не в «мёртвое» тело.</p></div></li>
+<li class="is-later"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Каталог модулей в программе</h3><p>Установка модулей и библиотек в один клик — без магазинов приложений.</p></div></li>
+<li class="is-later rm-tip"><div class="rm-leaves"></div><div class="rm-axis"><span class="rm-node"></span></div><div class="rm-body"><h3>Веб-версия</h3><p>BreezeCAD в браузере — без регистрации и без сбора данных.</p></div></li>
+</ol>
+<p class="rm-note">Новые модули и библиотеки появляются на дереве сами — из <a href="modules.html">каталога</a>. Есть идея? Расскажите <a href="https://vk.ru/breezecad" target="_blank" rel="noopener">ВКонтакте</a> или на <a href="https://github.com/BreezeCAD/breezecad/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+</section>
+</main>
+<footer class="ftr"><div class="wrap">
+<div style="display:flex;align-items:center;gap:10px"><img src="assets/mark.svg" width="18" height="21" alt=""><span>© 2026 BreezeCAD · свобода творить</span></div>
+<nav aria-label="Страницы"><a href="./">Главная</a><a href="pain.html">Боль инженера</a><a href="modules.html">Модули и библиотеки</a><a href="roadmap.html">Дорожная карта</a><a href="people.html">Люди проекта</a><a href="privacy.html">Конфиденциальность</a><a href="en/roadmap.html" lang="en" hreflang="en">English</a></nav>
+</div></footer>
+<script src="assets/roadmap.js" defer></script>
+</body>
+</html>
