@@ -1,8 +1,69 @@
 {
- "generated": "2026-11-08T20:02:29Z",
+ "generated": "2026-11-22T22:32:32Z",
  "repo": "BreezeCAD/breezecad",
- "latest": "v0.2.5.1-beta",
+ "latest": "v0.2.6-beta",
  "releases": [
+  {
+   "tag": "v0.2.6-beta",
+   "label": "0.2.6-Beta",
+   "date": "2026-11-22",
+   "url": "https://github.com/BreezeCAD/breezecad/releases/tag/v0.2.6-beta",
+   "variants": {
+    "windows": {
+     "offline": {
+      "name": "BreezeCAD-Setup-offline.exe",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-Setup-offline.exe",
+      "size": 44945970
+     },
+     "online": {
+      "name": "BreezeCAD-Setup.exe",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-Setup.exe",
+      "size": 6948495
+     },
+     "portable": {
+      "name": "BreezeCAD-windows.zip",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-windows.zip",
+      "size": 35631492
+     }
+    },
+    "macos": {
+     "dmg": {
+      "name": "BreezeCAD-macos.dmg",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-macos.dmg",
+      "size": 25460103
+     },
+     "zip": {
+      "name": "BreezeCAD-macos.zip",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-macos.zip",
+      "size": 25557295
+     }
+    },
+    "linux": {
+     "offline": {
+      "name": "BreezeCAD-Setup-linux-offline",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-Setup-linux-offline",
+      "size": 37417107
+     },
+     "online": {
+      "name": "BreezeCAD-Setup-linux",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-Setup-linux",
+      "size": 3523784
+     },
+     "targz": {
+      "name": "BreezeCAD-linux.tar.gz",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-linux.tar.gz",
+      "size": 32823526
+     }
+    },
+    "android": {
+     "apk": {
+      "name": "BreezeCAD-android.apk",
+      "url": "https://github.com/BreezeCAD/breezecad/releases/download/v0.2.6-beta/BreezeCAD-android.apk",
+      "size": 27839644
+     }
+    }
+   }
+  },
   {
    "tag": "v0.2.5.1-beta",
    "label": "0.2.5.1-Beta",
