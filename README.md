@@ -89,3 +89,24 @@
 - На сайте не упоминаем другие САПР.
 - Скриншоты — настоящие, из программы.
 - После правок открыть сайт в браузере и проверить глазами (ПК и телефон, RU и EN).
+
+## Веб-превью
+
+Редактор находится в `preview/`. Открывается со страницы сайта, выполняет
+геометрию в браузерном Worker и не использует сетевой API для файлов и команд.
+`preview/commands.html` описывает команды страницы для браузерной автоматизации.
+
+Файлы `preview/runtime/` собираются из репозитория BreezeCAD. Браузер загружает
+сжатый WebAssembly и распаковывает его внутри Worker. После установки
+и активации Emscripten SDK 4.0.23 запустите в репозитории ядра:
+
+```sh
+scripts/deps/build-occt.sh web /path/to/occt-wasm
+scripts/web/build.sh /path/to/occt-wasm build/web /path/to/breezecad-site/preview/runtime
+```
+
+Для локальной проверки раздайте корень сайта по HTTP, например
+`python3 -m http.server 8000`, и откройте `http://localhost:8000/preview/`.
+
+Веб-сборка использует [Open CASCADE Technology 8.0.1](https://github.com/Open-Cascade-SAS/OCCT/tree/V8_0_1)
+и [FreeType 2.13.3](https://github.com/freetype/freetype/tree/VER-2-13-3).

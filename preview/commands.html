@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="preview.css">
+  <title>Команды веб-превью BreezeCAD</title>
+  <style>
+    body { height: auto; display: block; }
+    main { max-width: 52rem; margin: 0 auto; padding: 1rem; line-height: 1.55; }
+    pre { overflow-x: auto; padding: 1rem; background: var(--surface); }
+    dt { font-weight: 650; margin-top: 1rem; overflow-wrap: anywhere; }
+    dd { margin-inline-start: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="./">Открыть превью</a></p>
+    <h1>Команды веб-превью BreezeCAD</h1>
+    <p>Отправляйте JSON через кнопку «Команды для ИИ» или выполняйте JavaScript в контексте страницы превью. После загрузки ядра появляется
+      <code>window.BreezeCAD</code>. Команды идут по очереди, меняют открытый документ и обновляют
+      дерево и вид. Ошибка построения возвращается как исключение.</p>
+    <pre><code>const cad = window.BreezeCAD;
+await cad.execute({ command: 'app.new_part' });
+const sketch = await cad.execute({
+  command: 'sketch.create', plane: 'XY',
+  profile: { type: 'rectangle', a: [0, 0], b: [40, 25] }
+});
+const extrusion = await cad.execute({
+  command: 'part.create_feature', type: 'extrude',
+  fields: { sketch: sketch.id, distance: '12 mm' }
+});
+const properties = await cad.execute({ command: 'part.properties' });
+// properties.size: [40, 25, 12], properties.volume: 12000
+const png = cad.capture();
+const bzc = await cad.execute({ command: 'doc.save' }); // ArrayBuffer</code></pre>
+    <dl>
+      <dt><code>app.new_part</code>, <code>app.open</code></dt>
+      <dd>Создать деталь либо открыть <code>{ name, bytes }</code>, где <code>bytes</code> — ArrayBuffer
+        с содержимым .bzc, .bza или .bzp. Также можно вызвать <code>cad.openFile(file)</code>.
+        Если текущий документ изменён, укажите <code>discard: true</code> после явного согласия
+        пользователя на сброс правок. Сборки открываются для просмотра. Для сборок с деталями используйте .bzp.</dd>
+      <dt><code>sketch.create</code>, <code>sketch.add</code></dt>
+      <dd>Создать эскиз на <code>plane</code> XY, XZ или YZ, на рабочей плоскости <code>workplane</code> по её ID
+        или на плоской грани по номеру <code>face</code>. Можно сразу передать <code>profile</code>.
+        Добавить к эскизу <code>sketch</code> линию или прямоугольник с <code>a</code>, <code>b</code>,
+        либо окружность с <code>center</code>, <code>radius</code>. Значения координат и радиусов в мм.
+        Типы <code>line</code>, <code>rectangle</code>, <code>circle</code>.</dd>
+      <dt><code>part.feature_types</code>, <code>part.feature</code></dt>
+      <dd>Получить типы операций и их поля по умолчанию либо текущие поля операции по <code>id</code>.
+        Имена полей совпадают с форматом .bzc.</dd>
+      <dt><code>part.create_feature</code>, <code>part.edit_feature</code></dt>
+      <dd>Создать операцию с <code>type</code> и <code>fields</code> либо изменить поля операции по <code>id</code>.
+        Строка или число в параметре с <code>expression</code> обновляет выражение.
+        У выдавливания поле <code>operation</code> принимает <code>newBody</code>, <code>join</code>,
+        <code>cut</code> или <code>intersect</code>.</dd>
+      <dt><code>part.tree</code>, <code>assembly.components</code>, <code>part.properties</code></dt>
+      <dd>Дерево, состояние документа, объём, площадь поверхности и габариты.</dd>
+      <dt><code>part.faces</code>, <code>part.edges</code>, <code>part.measure</code></dt>
+      <dd>Списки граней и рёбер со ссылками для операций. Измерение принимает
+        <code>a</code> и <code>b</code>, каждый в виде <code>{ face: true, index: f.index }</code> для грани или
+        <code>{ face: false, index: e.index }</code> для ребра. Расстояние — в мм, угол — в радианах, когда применимо.
+        После перестроения запросите номера заново.</dd>
+      <dt><code>doc.undo</code>, <code>doc.redo</code>, <code>doc.save</code></dt>
+      <dd>Отмена, повтор правки и получение .bzc в ArrayBuffer. Аргументы не требуются.</dd>
+      <dt><code>view.mesh</code>, <code>cad.capture()</code></dt>
+      <dd>Получить треугольники и отрезки вида либо PNG текущего 3D-кадра как data URL.</dd>
+    </dl>
+  </main>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>BreezeCAD · Веб-превью</title>
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="preview.css">
+  <script type="module" src="preview.js"></script>
+</head>
+<body>
+  <header class="header">
+    <img src="../assets/mark.svg" alt="" width="28" height="28">
+    <strong>BreezeCAD</strong>
+    <span class="subtitle">Веб-превью</span>
+    <span id="document-name"></span>
+    <button id="close" class="close" title="Закрыть превью (Esc)" aria-label="Закрыть превью">×</button>
+  </header>
+  <nav class="toolbar" aria-label="Команды модели" inert>
+    <button id="new">Новая деталь</button>
+    <button id="open">Открыть</button>
+    <input id="file" type="file" accept=".bzc,.bza,.bzp" hidden>
+    <button id="save">Скачать .bzc</button>
+    <span class="separator"></span>
+    <button id="undo">Отменить</button>
+    <button id="redo">Повторить</button>
+    <span class="separator"></span>
+    <button id="sketch">Эскиз</button>
+    <button id="extrude">Выдавливание</button>
+    <button id="measure">Измерить</button>
+    <button id="fit">Вписать</button>
+    <button id="tree-toggle" aria-controls="panel" aria-expanded="true">Дерево</button>
+  </nav>
+  <main class="workspace">
+    <aside id="panel" class="panel">
+      <h2 id="tree-title">Дерево модели</h2>
+      <p id="empty-tree">Здесь появятся эскизы и операции.</p>
+      <ul id="tree" aria-labelledby="tree-title"></ul>
+      <p id="assembly-note" hidden>Сборка открыта для просмотра. Измерения доступны.</p>
+    </aside>
+    <section class="viewport" aria-label="Трёхмерный вид">
+      <canvas id="view" aria-label="Трёхмерная модель"></canvas>
+      <div id="loading" role="status" class="loading">Загружается геометрическое ядро…</div>
+      <div class="axes" aria-hidden="true"><span>X</span><span>Y</span><span>Z</span></div>
+      <p class="gesture mouse">Перетаскивание — поворот · Колесо — масштаб · Shift — сдвиг</p>
+      <p class="gesture touch">Один палец — поворот · Два пальца — сдвиг и масштаб</p>
+    </section>
+  </main>
+  <footer>
+    <span id="status" role="status" aria-live="polite"></span>
+    <button id="command" disabled>Команды для ИИ</button>
+  </footer>
+
+  <dialog id="sketch-dialog">
+    <form id="sketch-form">
+      <h2>Эскиз</h2>
+      <label>Плоскость <select name="plane"><option>XY</option><option>XZ</option><option>YZ</option></select></label>
+      <label>Профиль <select name="type"><option value="rectangle">Прямоугольник</option><option value="circle">Окружность</option></select></label>
+      <label id="width-label">Ширина, мм <input name="width" type="number" value="40" min="0.001" step="any" required></label>
+      <label id="height-label">Высота, мм <input name="height" type="number" value="25" min="0.001" step="any" required></label>
+      <label id="radius-label" hidden>Радиус, мм <input name="radius" type="number" value="15" min="0.001" step="any" required></label>
+      <div class="actions"><button type="button" data-cancel>Отмена</button><button class="primary">Создать эскиз</button></div>
+    </form>
+  </dialog>
+  <dialog id="extrude-dialog">
+    <form id="extrude-form">
+      <h2>Выдавливание</h2>
+      <label id="profile-label">Эскиз <select name="sketch" required></select></label>
+      <label>Расстояние <input name="distance" value="12 mm" required></label>
+      <div class="actions"><button type="button" data-cancel>Отмена</button><button class="primary">Применить</button></div>
+    </form>
+  </dialog>
+  <dialog id="measure-dialog">
+    <form id="measure-form">
+      <h2>Измерения</h2>
+      <div id="properties"></div>
+      <label>Элемент A <select name="a"><option value="">Выберите грань или ребро</option></select></label>
+      <label>Элемент Б <select name="b"><option value="">Выберите грань или ребро</option></select></label>
+      <output id="measurement"></output>
+      <div class="actions"><button type="button" data-cancel>Готово</button></div>
+    </form>
+  </dialog>
+  <dialog id="command-dialog" class="command-dialog">
+    <form id="command-form">
+      <h2>Команды для ИИ</h2>
+      <label>Команда JSON <textarea name="request" rows="5" spellcheck="false" required>{"command": "part.properties"}</textarea></label>
+      <pre id="command-result" role="status" aria-live="polite"></pre>
+      <div class="actions">
+        <a href="commands.html" target="_blank" rel="noopener">Справка</a>
+        <button type="button" data-cancel>Закрыть</button>
+        <button class="primary">Выполнить</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
